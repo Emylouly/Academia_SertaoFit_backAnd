@@ -25,7 +25,7 @@ public class CadastroModel {
     private String senhaCdastro;
 
     @Column(name = "cpfCadastro")
-    private String cpfCdastro;
+    private String cpfCadastro;
 
     @Column(name = "data_cadastro")
     private LocalDateTime data_cadastro;

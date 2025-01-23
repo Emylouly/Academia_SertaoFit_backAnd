@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/Cadatro")
+@RequestMapping("/Cadastro")
 public class CadastroController {
 
     private final CadastroRepository cadastroRepository;
@@ -39,9 +39,12 @@ public class CadastroController {
     
     @GetMapping("/findById/{id}")
     public ResponseEntity<CadastroDTO> findById(@PathVariable("id") Long id) {
-        Optional<CadastroModel> 
-        return ;
+        Optional<CadastroModel> cadastro = cadastroRepository.findById(id);
+        return cadastro.map(l -> ResponseEntity.ok(new CadastroDTO(l)))
+                        .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
     
     
     

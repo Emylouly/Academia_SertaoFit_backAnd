@@ -1,6 +1,5 @@
 package br.edu.ifba.demo.backend.api.model;
-import jakarta.annotation.Generated;
-import jakarta.annotation.sql.DataSourceDefinition;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,30 +13,21 @@ public class CadastroModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCadastro")
-    private Long idCdastro;
+    private Long idCadastro;
 
     @Column(name = "nomeCadastro")
-    private Long idCdastro;
+    private String nomeCadastro;
 
-    @Column(name = "idCadastro")
-    private Long idCdastro;
+    @Column(name = "emailCadastro")
+    private String emailCdastro;
 
-    @Column(name = "idCadastro")
-    private Long idCdastro;
+    @Column(name = "senhaCadastro")
+    private String senhaCdastro;
 
-    @Column(name = "idCadastro")
-    private Long idCdastro;
+    @Column(name = "cpfCadastro")
+    private String cpfCdastro;
 
-    @Column(name = "idCadastro")
-    private Long idCdastro;
+    @Column(name = "data_cadastro")
+    private LocalDateTime data_cadastro;
 
-    @Column(name = "idCadastro")
-    private Long idCdastro;
-
-    @Column(name = "idCadastro")
-    private Long idCdastro;
-
-    
-
-    
 }

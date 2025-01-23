@@ -44,6 +44,13 @@ public class CadastroController {
                         .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/findByEmail/{email}")
+    public ResponseEntity<CadastroDTO> findByEmail(@PathVariable("email") String email) {
+        Optional<CadastroModel> cadastro = cadastroRepository.findByEmail(email);
+        return cadastro.map(l -> ResponseEntity.ok(new CadastroDTO(l)))
+                        .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     // Método para consultar livro por nome
     @GetMapping("/findByNome/{nome}")
     public ResponseEntity<CadastroDTO> findByNome(@PathVariable("nomeCadastro") String nomeCadastro) {

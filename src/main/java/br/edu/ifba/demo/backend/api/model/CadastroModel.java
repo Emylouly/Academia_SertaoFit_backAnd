@@ -19,10 +19,10 @@ public class CadastroModel {
     private String nomeCadastro;
 
     @Column(name = "emailCadastro")
-    private String emailCdastro;
+    private String emailCadastro;
 
     @Column(name = "senhaCadastro")
-    private String senhaCdastro;
+    private String senhaCadastro;
 
     @Column(name = "cpfCadastro")
     private String cpfCadastro;

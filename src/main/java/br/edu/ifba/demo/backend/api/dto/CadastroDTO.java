@@ -18,8 +18,8 @@ public class CadastroDTO implements Serializable{
     public CadastroDTO(CadastroModel cadastroModel) {
         this.idCadastro = cadastroModel.getIdCadastro();
         this.nomeCadastro = cadastroModel.getNomeCadastro();
-        this.email = cadastroModel.getEmailCdastro();
-        this.senhaCadastro = cadastroModel.getSenhaCdastro();
+        this.email = cadastroModel.getEmailCadastro();
+        this.senhaCadastro = cadastroModel.getSenhaCadastro();
         this.cpfCadastro = cadastroModel.getCpfCadastro();
         this.dataCadastro = cadastroModel.getData_cadastro();
     }

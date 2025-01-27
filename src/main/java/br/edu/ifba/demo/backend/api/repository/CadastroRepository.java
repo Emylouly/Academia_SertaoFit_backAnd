@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 public interface CadastroRepository 
 	extends JpaRepository<CadastroModel, Long>
 {
-	Optional<CadastroModel> findById(Long idCadastro);
+	@SuppressWarnings("null")
+    Optional<CadastroModel> findById(Long idCadastro);
     Optional<CadastroModel> findByNome(String nomeCadastro);
     Optional<CadastroModel> findByCpf(String cpfCadastro);
     Optional<CadastroModel> findByEmail(String emailCadastro);

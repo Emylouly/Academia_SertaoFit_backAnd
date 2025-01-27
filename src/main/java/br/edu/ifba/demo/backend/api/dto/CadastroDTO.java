@@ -7,10 +7,10 @@ public class CadastroDTO implements Serializable{
     
     private Long idCadastro;
     private String nomeCadastro;
-    private String email;
+    private String emailCadastro;
     private String senhaCadastro;
     private String cpfCadastro;
-    private LocalDateTime dataCadastro;
+    private LocalDateTime data_cadastro;
 
     public CadastroDTO() {
     }
@@ -18,10 +18,10 @@ public class CadastroDTO implements Serializable{
     public CadastroDTO(CadastroModel cadastroModel) {
         this.idCadastro = cadastroModel.getIdCadastro();
         this.nomeCadastro = cadastroModel.getNomeCadastro();
-        this.email = cadastroModel.getEmailCadastro();
+        this.emailCadastro = cadastroModel.getEmailCadastro();
         this.senhaCadastro = cadastroModel.getSenhaCadastro();
         this.cpfCadastro = cadastroModel.getCpfCadastro();
-        this.dataCadastro = cadastroModel.getData_cadastro();
+        this.data_cadastro = cadastroModel.getData_cadastro();
     }
 
     public Long getIdCadastro() {
@@ -32,8 +32,8 @@ public class CadastroDTO implements Serializable{
         return nomeCadastro;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailCadastro() {
+        return emailCadastro;
     }
 
     public String getSenhaCadastro() {
@@ -45,7 +45,7 @@ public class CadastroDTO implements Serializable{
     }
 
     public LocalDateTime getDataCadastro() {
-        return dataCadastro;
+        return data_cadastro;
     }
 
     public void setIdCadastro(Long idCadastro) {
@@ -56,8 +56,8 @@ public class CadastroDTO implements Serializable{
         this.nomeCadastro = nomeCadastro;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailCadastro(String emailCadastro) {
+        this.emailCadastro = emailCadastro;
     }
 
     public void setSenhaCadastro(String senhaCadastro) {
@@ -68,8 +68,8 @@ public class CadastroDTO implements Serializable{
         this.cpfCadastro = cpfCadastro;
     }
 
-    public void setDataCadastro(LocalDateTime dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setDataCadastro(LocalDateTime data_cadastro) {
+        this.data_cadastro = data_cadastro;
     }
 
 

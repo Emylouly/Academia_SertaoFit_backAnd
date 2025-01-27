@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
-@RequestMapping("/Cadastro")
+@RequestMapping("/cadastro")
 public class CadastroController {
 
     private final CadastroRepository cadastroRepository;

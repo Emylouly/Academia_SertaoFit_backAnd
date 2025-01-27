@@ -15,16 +15,16 @@ public class CadastroModel {
     @Column(name = "idCadastro")
     private Long idCadastro;
 
-    @Column(name = "nomeCadastro")
+    @Column(name = "nomeCadastro", nullable = false)
     private String nomeCadastro;
 
-    @Column(name = "emailCadastro")
+    @Column(name = "emailCadastro", nullable = false)
     private String emailCadastro;
 
-    @Column(name = "senhaCadastro")
+    @Column(name = "senhaCadastro", nullable = false)
     private String senhaCadastro;
 
-    @Column(name = "cpfCadastro")
+    @Column(name = "cpfCadastro", nullable = false)
     private String cpfCadastro;
 
     @Column(name = "data_cadastro")

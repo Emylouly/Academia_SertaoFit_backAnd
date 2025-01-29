@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,5 +72,23 @@ public class CadastroController {
         return ResponseEntity.ok("Cadastro criado com sucesso!");
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteCadastro(@PathVariable Integer id){
+        Optional <CadastroModel> cadastro = cadastroRepository.findById(id);
+
+        if (cadastro.isPresent()){
+            cadastroRepository.delete(cadastro.get());
+            System.out.println("Cadastro deletado com sucesso, id:" + id);
+            return ResponseEntity.noContent().build();
+        }
+
+        else {
+
+            System.out.println("Cadastro não encontrado, id: " + id);
+            return ResponseEntity.notFound().build();
+
+        }
+
+    }
 
 }

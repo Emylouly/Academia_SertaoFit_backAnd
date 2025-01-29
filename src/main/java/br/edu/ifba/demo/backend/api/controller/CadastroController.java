@@ -29,14 +29,26 @@ public class CadastroController {
     }
 
     @GetMapping("/procurarporid/{id}")
-    public ResponseEntity<?> obterCadastro(@PathVariable Integer id) {
+    public ResponseEntity<?> obterCadastro1(@PathVariable Integer id) {
         Optional<CadastroModel> cadastro = cadastroRepository.findById(id);
         return cadastro.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/procurarpornome/{nome}")
-    public ResponseEntity<?> obterCadastro(@PathVariable String nome) {
+    public ResponseEntity<?> obterCadastro2(@PathVariable String nome) {
         Optional<CadastroModel> cadastro = cadastroRepository.findByNomeCadastro(nome);
+        return cadastro.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/procurarporemail/{email}")
+    public ResponseEntity<?> obterCadastro3(@PathVariable String email) {
+        Optional<CadastroModel> cadastro = cadastroRepository.findByEmailCadastro(email);
+        return cadastro.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/procurarporcpf/{cpf}")
+    public ResponseEntity<?> obterCadastro4(@PathVariable String cpf) {
+        Optional<CadastroModel> cadastro = cadastroRepository.findByCpfCadastro(cpf);
         return cadastro.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 

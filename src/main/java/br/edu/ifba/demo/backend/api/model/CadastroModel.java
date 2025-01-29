@@ -2,7 +2,6 @@ package br.edu.ifba.demo.backend.api.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.time.LocalDateTime;
 
 @Data
@@ -27,7 +26,6 @@ public class CadastroModel {
     @Column(name = "cpfCadastro", nullable = false)
     private String cpfCadastro;
 
-    @Column(name = "data_cadastro")
-    private LocalDateTime data_cadastro;
-
+    @Column(name = "data_cadastro", nullable = false)
+    private LocalDateTime dataCadastro;
 }

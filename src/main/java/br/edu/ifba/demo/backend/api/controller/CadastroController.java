@@ -1,71 +1,49 @@
 package br.edu.ifba.demo.backend.api.controller;
 
 import br.edu.ifba.demo.backend.api.dto.CadastroDTO;
-/*import br.edu.ifba.demo.backend.api.dto.LivroDTO; */
 import br.edu.ifba.demo.backend.api.model.CadastroModel;
-/*import br.edu.ifba.demo.backend.api.model.LivroModel;*/
 import br.edu.ifba.demo.backend.api.repository.CadastroRepository;
-/*import br.edu.ifba.demo.backend.api.repository.LivroRepository;*/
-/*import org.springframework.http.HttpStatus; */
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import org.springframework.web.bind.annotation.GetMapping;
-/*import org.springframework.web.bind.annotation.RequestParam;*/
-
-
 
 @RestController
+@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/cadastro")
 public class CadastroController {
 
     private final CadastroRepository cadastroRepository;
 
-    public CadastroController(CadastroRepository cadastroRepository){
+    @Autowired
+    public CadastroController(CadastroRepository cadastroRepository) {
         this.cadastroRepository = cadastroRepository;
     }
 
     @GetMapping
     public String teste() {
-		return "Testando rota Cadastro";
+        return "Testando rota Cadastro";
     }
 
     @GetMapping("/listAll")
     public List<CadastroModel> listAll() {
         return cadastroRepository.findAll();
-    }
-    
-    @GetMapping("/findById/{idCadastro}")
-    public ResponseEntity<CadastroDTO> findById(@PathVariable("idCadastro") Long idCadastro) {
-        Optional<CadastroModel> cadastro = cadastroRepository.findById(idCadastro);
-        return cadastro.map(l -> ResponseEntity.ok(new CadastroDTO(l)))
-                        .orElseGet(() -> ResponseEntity.notFound().build());
+}
+
+
+    @GetMapping("/{id}")
+    public Optional<CadastroModel> findById(@PathVariable Long id) {
+        return cadastroRepository.findById(id);
     }
 
-    @GetMapping("/findByEmail/{emailCadastro}")
-    public ResponseEntity<CadastroDTO> findByEmail(@PathVariable("emailCadastro") String emailCadastro) {
-        Optional<CadastroModel> cadastro = cadastroRepository.findByEmail(emailCadastro);
-        return cadastro.map(l -> ResponseEntity.ok(new CadastroDTO(l)))
-                        .orElseGet(() -> ResponseEntity.notFound().build());
+    @PostMapping("/save")
+    public CadastroModel save(@RequestBody CadastroModel cadastro) {
+        return cadastroRepository.save(cadastro);
     }
 
-    // Método para consultar livro por nome
-    @GetMapping("/findByNome/{nomeCadastro}")
-    public ResponseEntity<CadastroDTO> findByNome(@PathVariable("nomeCadastro") String nomeCadastro) {
-        Optional<CadastroModel> cadastro = cadastroRepository.findByNome(nomeCadastro);
-        return cadastro.map(l -> ResponseEntity.ok(new CadastroDTO(l)))
-                    .orElseGet(() -> ResponseEntity.notFound().build());
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        cadastroRepository.deleteById(id);
     }
-    
-    @GetMapping("/findByCpf/{cpfCadastro}")
-    public ResponseEntity<CadastroDTO> findByCpf(@PathVariable("cpfCadastro") String cpfCadastro) {
-        Optional<CadastroModel> cadastro = cadastroRepository.findByCpf(cpfCadastro);
-        return cadastro.map(l -> ResponseEntity.ok(new CadastroDTO(l)))
-                    .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-    
-    
-    
 }

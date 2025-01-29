@@ -33,8 +33,6 @@ public class CadastroController {
     public List<CadastroDTO> listall() {
         var cadastro = cadastroRepository.findAll();
         return CadastroDTO.converter(cadastro);
-    }
-
-    
+    } 
     
 }

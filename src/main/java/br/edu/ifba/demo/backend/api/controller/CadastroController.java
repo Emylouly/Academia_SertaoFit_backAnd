@@ -1,10 +1,17 @@
 package br.edu.ifba.demo.backend.api.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import br.edu.ifba.demo.backend.api.dto.CadastroDTO;
 /*import br.edu.ifba.demo.backend.api.dto.LivroDTO; */
 import br.edu.ifba.demo.backend.api.model.CadastroModel;
 /*import br.edu.ifba.demo.backend.api.model.LivroModel;*/
 import br.edu.ifba.demo.backend.api.repository.CadastroRepository;
+<<<<<<< Updated upstream
 /*import br.edu.ifba.demo.backend.api.repository.LivroRepository;*/
 /*import org.springframework.http.HttpStatus; */
 import org.springframework.http.ResponseEntity;
@@ -16,18 +23,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 /*import org.springframework.web.bind.annotation.RequestParam;*/
 
 
+=======
+import org.springframework.web.bind.annotation.RequestParam;
+
+>>>>>>> Stashed changes
 
 @RestController
 @RequestMapping("/cadastro")
 public class CadastroController {
 
-    private final CadastroRepository cadastroRepository;
+    private CadastroRepository cadastroRepository;
 
     public CadastroController(CadastroRepository cadastroRepository){
         this.cadastroRepository = cadastroRepository;
     }
 
     @GetMapping
+<<<<<<< Updated upstream
     public String teste() {
 		return "Testando rota Cadastro";
     }
@@ -66,6 +78,20 @@ public class CadastroController {
                     .orElseGet(() -> ResponseEntity.notFound().build());
     }
     
+=======
+    public String teste(){
+
+        return "Testando rota";
+
+    }
+
+    @GetMapping("/listall")
+    public List<CadastroDTO> listall() {
+        var cadastro = cadastroRepository.findAll();
+        return CadastroDTO.converter(cadastro);
+    }
+
+>>>>>>> Stashed changes
     
     
 }

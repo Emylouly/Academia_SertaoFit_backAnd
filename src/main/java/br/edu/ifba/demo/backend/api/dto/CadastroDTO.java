@@ -1,29 +1,4 @@
 package br.edu.ifba.demo.backend.api.dto;
-<<<<<<< Updated upstream
-import br.edu.ifba.demo.backend.api.model.CadastroModel;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
-public class CadastroDTO implements Serializable{
-    
-    private Long idCadastro;
-    private String nomeCadastro;
-    private String emailCadastro;
-    private String senhaCadastro;
-    private String cpfCadastro;
-    private LocalDateTime data_cadastro;
-
-    public CadastroDTO() {
-    }
-
-    public CadastroDTO(CadastroModel cadastroModel) {
-        this.idCadastro = cadastroModel.getIdCadastro();
-        this.nomeCadastro = cadastroModel.getNomeCadastro();
-        this.emailCadastro = cadastroModel.getEmailCadastro();
-        this.senhaCadastro = cadastroModel.getSenhaCadastro();
-        this.cpfCadastro = cadastroModel.getCpfCadastro();
-        this.data_cadastro = cadastroModel.getData_cadastro();
-=======
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -81,7 +56,6 @@ public class CadastroDTO {
         this.cpf_cadastro = cpf_cadastro;
         this.data_cadastros = data_cadastros;
 
->>>>>>> Stashed changes
     }
 
     public long getId_cadastro() {
@@ -104,13 +78,8 @@ public class CadastroDTO {
         return email_cadastro;
     }
 
-<<<<<<< Updated upstream
-    public LocalDateTime getDataCadastro() {
-        return data_cadastro;
-=======
     public void setEmail_cadastro(String email_cadastro) {
         this.email_cadastro = email_cadastro;
->>>>>>> Stashed changes
     }
 
     public String getSenha_cadastro() {
@@ -133,19 +102,11 @@ public class CadastroDTO {
         return data_cadastros;
     }
 
-<<<<<<< Updated upstream
-    public void setDataCadastro(LocalDateTime data_cadastro) {
-        this.data_cadastro = data_cadastro;
-    }
-
-
-=======
     public void setData_cadastros(LocalDateTime data_cadastros) {
         this.data_cadastros = data_cadastros;
     }
 
     
->>>>>>> Stashed changes
     
     
 }

@@ -1,11 +1,5 @@
 package br.edu.ifba.demo.backend.api.model;
 
-<<<<<<< Updated upstream
-import jakarta.persistence.*;
-import lombok.Data;
-
-=======
->>>>>>> Stashed changes
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -39,10 +33,6 @@ public class CadastroModel {
     private String cpf_cadastro;
 
     @Column(name = "data_cadastro")
-<<<<<<< Updated upstream
-    private LocalDateTime data_cadastro;
-
-=======
     private LocalDateTime data_cadastros;
 
     public CadastroModel(){
@@ -62,5 +52,4 @@ public class CadastroModel {
 
     }
     
->>>>>>> Stashed changes
 }
